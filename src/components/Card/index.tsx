@@ -1,20 +1,25 @@
-import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
+
+import { motion, Variants } from "framer-motion";
+
+import { cn } from "@/lib/utils";
 
 type Props = {
   children: ReactNode;
   className?: string;
+  variants?: Variants;
 };
 
-export function Card({ children, className }: Readonly<Props>) {
+export function Card({ children, className, variants }: Readonly<Props>) {
   return (
-    <div
+    <motion.div
+      variants={variants}
       className={cn(
-        "flex items-center bg-card-gradient p-6 rounded-lg border border-solid border-gray-600",
+        "flex items-center bg-card-gradient p-3 rounded-lg border border-solid border-gray-600",
         className
       )}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
