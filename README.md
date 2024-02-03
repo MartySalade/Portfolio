@@ -1,2 +1,3 @@
-# Portfolio
-2024 - Frontend software engineer portfolio
+# Hey there!
+
+## This is my portfolio as a frontend software engineer
