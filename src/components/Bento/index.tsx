@@ -1,8 +1,13 @@
 import { motion } from "framer-motion";
+import { ArrowDown, MessageCircle } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 import profilePicture from "@/assets/images/martinMalleinPP.jpeg";
 import { BentoBlock, Card } from "@/components";
+import { BackgroundGradient } from "@/components/ui/background-gradient";
+import { Button } from "@/components/ui/button";
+import { PROJECTS } from "@/data";
 
 export function Bento() {
   const container = {
@@ -11,8 +16,8 @@ export function Bento() {
       opacity: 1,
       scale: 1,
       transition: {
-        delayChildren: 0.35,
-        staggerChildren: 0.35,
+        delayChildren: 0.25,
+        staggerChildren: 0.25,
       },
     },
   };
@@ -26,20 +31,30 @@ export function Bento() {
   };
 
   return (
-    <div className="relative flex items-center justify-center w-full">
-      {/* <div className="z-0 absolute w-[900px] h-[900px] bg-gradient-to-br from-blue-500 opacity-30 to-pink-500 rounded-full filter blur-3xl" /> */}
+    <section
+      id="bento"
+      className="px-4 md:px-8 relative flex flex-col items-center justify-center w-full gap-16 h-full pt-24"
+    >
       <motion.div
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
+        viewport={{ once: true }}
         variants={container}
-        className="w-fit relative z-10 grid grid-cols-3 grid-rows-6 gap-4 h-96 md:h-auto"
+        className="w-full lg:w-1/2 relative z-10 grid grid-cols-3 grid-rows-7 gap-2 sm:gap-4"
       >
-        <Card variants={item} className="col-span-2 row-span-2">
+        <Card
+          variants={item}
+          className="h-full flex justify-center col-span-3 gap-2 py-1"
+        >
+          <span className="bg-lamp rounded-full h-4 w-4 animate-pulse" />
+          <h3 className="font-semibold text-lg md:text-xl">Available</h3>
+        </Card>
+        <Card variants={item} className="col-span-2 row-span-2 row-start-2">
           <BentoBlock title="Frontend" description="Software Engineer" />
         </Card>
         <Card
           variants={item}
-          className="row-span-2 col-start-3 relative h-full"
+          className="row-span-2 col-start-3 row-start-2 relative h-full"
         >
           <Image
             alt="martin.mallein"
@@ -49,29 +64,43 @@ export function Bento() {
             className="absolute object-cover rounded-lg"
           />
         </Card>
-        <Card variants={item} className=" row-span-2 row-start-3">
-          <BentoBlock title="5" description="projects" />
+        <Card variants={item} className="row-span-2 row-start-4">
+          <BentoBlock
+            title={PROJECTS.length.toString()}
+            description="projects"
+          />
         </Card>
-        <Card variants={item} className="col-span-2 row-span-2 row-start-3">
+        <Card variants={item} className="col-span-2 row-span-2 row-start-4">
           <BentoBlock title="Martin" description="Mallein" />
         </Card>
-        <Card variants={item} className="col-span-2 row-span-2 row-start-5">
+        <Card variants={item} className="col-span-3 row-span-2 row-start-6">
           <BentoBlock title="Toulouse" description="31300 - France" />
         </Card>
-        <Card
-          variants={item}
-          className="h-full flex flex-col justify-center md:flex-row col-start-3 row-start-5 row-span-2 md:row-span-1 gap-2 py-2"
-        >
-          <span className="bg-green-400 rounded-full h-4 w-4 animate-pulse" />
-          <h3 className="font-bold text-xl md:text-2xl">Available</h3>
-        </Card>
-        <Card
-          variants={item}
-          className="hidden md:flex col-start-3 row-start-6 py-2"
-        >
-          <h3 className="w-full font-bold text-5xl">...</h3>
-        </Card>
       </motion.div>
-    </div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{
+          delay: 2,
+          duration: 0.2,
+        }}
+        className="flex gap-4 items-center justify-center"
+      >
+        <Button asChild>
+          <Link href="#projects">
+            Explore my work <ArrowDown className="ml-2 h-6 w-6" />
+          </Link>
+        </Button>
+        <BackgroundGradient>
+          <Button asChild variant="icon" className="w-full">
+            <Link href="#contact">
+              Contact me
+              <MessageCircle className="ml-2 h-6 w-6" />
+            </Link>
+          </Button>
+        </BackgroundGradient>
+      </motion.div>
+    </section>
   );
 }

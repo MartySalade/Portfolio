@@ -15,7 +15,7 @@ export function Card({ children, className, variants }: Readonly<Props>) {
     <motion.div
       variants={variants}
       className={cn(
-        "flex items-center bg-card-gradient p-3 rounded-lg border border-solid border-gray-600",
+        "flex items-center bg-card-gradient p-4 rounded-lg border border-solid border-gray-600",
         className
       )}
     >
