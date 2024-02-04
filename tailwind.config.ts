@@ -52,6 +52,13 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        skill: {
+          green: "#25E2C0",
+          blue: "#6D62EA",
+          red: "#EA495C",
+          yellow: "#F2BD32",
+        },
+        lamp: "#00ccb1",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -75,6 +82,14 @@ const config = {
       backgroundImage: {
         "card-gradient":
           "linear-gradient(180deg, rgba(39,39,39,1) 0%, rgba(39,39,39,0.6) 100%);",
+        "button-gradient":
+          "linear-gradient(72deg, rgba(63,251,164,1) 0%, rgba(70,104,252,1) 100%)",
+      },
+      boxShadow: {
+        lamp: "0px 0px 9px 1px #00ccb1",
+        "skill-blue": "0px 0px 9px 1px #6D62EA",
+        "skill-yellow": "0px 0px 9px 1px #F2BD32",
+        "skill-red": "0px 0px 9px 1px #EA495C",
       },
     },
   },

@@ -68,21 +68,28 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border scroll-smooth;
   }
   body {
-    @apply bg-background text-foreground min-h-screen w-screen;
+    @apply bg-background text-foreground min-h-screen w-screen overflow-x-hidden scroll-smooth;
   }
   h1 {
-    @apply text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold;
+    @apply text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold;
   }
   h2 {
-    @apply text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold;
+    @apply text-4xl lg:text-5xl xl:text-6xl font-semibold;
   }
   h3 {
-    @apply text-3xl lg:text-4xl xl:text-5xl font-semibold;
+    @apply text-2xl lg:text-3xl xl:text-4xl font-medium;
   }
   h4 {
     @apply text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-medium;
+  }
+  p {
+    @apply text-gray-500;
+  }
+  h1,
+  h2 {
+    @apply bg-gradient-to-br from-slate-300 to-slate-500 bg-clip-text tracking-tight text-transparent py-1;
   }
 }
