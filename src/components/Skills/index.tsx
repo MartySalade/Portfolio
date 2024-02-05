@@ -30,7 +30,6 @@ export function Skills() {
       whileInView="visible"
       viewport={{ once: true }}
       variants={container}
-      id="contact"
       className="mt-24 sm:mt-32 flex flex-col gap-12 px-4 md:px-8 xl:px-0"
     >
       <h2 className="text-center lg:text-left">How can I help ?</h2>
@@ -40,8 +39,8 @@ export function Skills() {
             <Card
               variants={item}
               className={cn(
-                "p-8 flex flex-col items-start gap-4 border-none",
-                skill.shadow
+                "group p-8 flex flex-col items-start gap-4 hover:shadow-lamp transition-all"
+                // skill.shadow
               )}
             >
               <div className="flex items-center gap-4">

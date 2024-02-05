@@ -93,10 +93,9 @@ export function Bento() {
           </Link>
         </Button>
         <BackgroundGradient>
-          <Button asChild variant="icon" className="w-full">
+          <Button asChild variant="icon" className="p-4">
             <Link href="#contact">
-              Contact me
-              <MessageCircle className="ml-2 h-6 w-6" />
+              <MessageCircle className="h-6 w-6" />
             </Link>
           </Button>
         </BackgroundGradient>
