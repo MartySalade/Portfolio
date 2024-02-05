@@ -53,8 +53,8 @@ export function ProjectParallax() {
   const allImages = shuffleArray(
     PROJECTS.map((project) => project.images).flat()
   );
-  const firstRow = allImages.slice(0, 5);
-  const secondRow = allImages.slice(5, 10);
+  const firstRow = allImages.slice(0, 4);
+  const secondRow = allImages.slice(4, 8);
 
   return (
     <div

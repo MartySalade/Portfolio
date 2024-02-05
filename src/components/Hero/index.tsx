@@ -32,7 +32,7 @@ export function Hero() {
         className="absolute h-full top-full mt-24"
       >
         <Link href="#bento">
-          <ChevronsDown className="cursor-pointer animate-pulse absolute bottom-16" />
+          <ChevronsDown className="cursor-pointer animate-pulse absolute bottom-24 sm:bottom-16" />
         </Link>
       </motion.div>
     </LampContainer>
