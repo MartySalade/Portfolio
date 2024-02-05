@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 
 import { Card } from "@/components";
 import { SKILLS } from "@/data";
-import { cn } from "@/lib/utils";
 
 export function Skills() {
   const container = {
@@ -38,10 +37,7 @@ export function Skills() {
           <li key={skill.title}>
             <Card
               variants={item}
-              className={cn(
-                "group p-8 flex flex-col items-start gap-4 hover:shadow-lamp transition-all"
-                // skill.shadow
-              )}
+              className="group p-8 flex flex-col items-start gap-4"
             >
               <div className="flex items-center gap-4">
                 {skill.icon}

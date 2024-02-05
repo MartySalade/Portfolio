@@ -63,8 +63,7 @@ export function Project({ project, reverse, translateY }: Readonly<Props>) {
             <Badge key={tag}>{tag}</Badge>
           ))}
         </ul>
-
-        <p>{description}</p>
+        {description}
         <div className="flex gap-4">
           <Button asChild size="sm">
             <Link href={url} target="_blank">

@@ -6,6 +6,17 @@ import Image from "next/image";
 
 import { PROJECTS } from "@/data";
 
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffledArray = [...array];
+
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+  }
+
+  return shuffledArray;
+}
+
 export function ProjectParallax() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -39,7 +50,9 @@ export function ProjectParallax() {
     springConfig
   );
 
-  const allImages = PROJECTS.map((project) => project.images).flat();
+  const allImages = shuffleArray(
+    PROJECTS.map((project) => project.images).flat()
+  );
   const firstRow = allImages.slice(0, 5);
   const secondRow = allImages.slice(5, 10);
 

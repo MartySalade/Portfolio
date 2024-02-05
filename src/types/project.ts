@@ -2,7 +2,7 @@ import { StaticImageData } from "next/image";
 
 export interface IProject {
   title: string;
-  description: string;
+  description: React.ReactNode;
   images: StaticImageData[];
   tags: string[];
   url: string;

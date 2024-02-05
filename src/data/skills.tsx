@@ -4,28 +4,28 @@ export const SKILLS = [
   {
     title: "Design",
     description:
-      "You have an idea and you want it to be designed before the development starts. Great idea, I’ll be happy to help you through this step.",
+      "Transform your ideas into visually stunning concepts. I specialize in creating designs that seamlessly blend creativity and functionality, setting the stage for a stellar development journey.",
     icon: <SprayCan className="w-8 h-8 text-lamp" />,
     shadow: "shadow-lamp",
   },
   {
     title: "Dev",
     description:
-      "You have an idea and you want it to be designed before the development starts. Great idea, I’ll be happy to help you through this step.",
+      "Bring your vision to life through meticulous development. With a keen eye for detail, I code with precision, turning your ideas into robust and efficient digital solutions.",
     icon: <Code className="w-8 h-8 text-lamp" />,
     shadow: "shadow-skill-blue",
   },
   {
-    title: "Seo",
+    title: "SEO",
     description:
-      "You have an idea and you want it to be designed before the development starts. Great idea, I’ll be happy to help you through this step.",
+      "Optimize your digital presence for search engines. From keyword strategies to analytics, I enhance your website's visibility, ensuring it stands out in the digital landscape.",
     icon: <ScanSearch className="w-8 h-8 text-lamp" />,
     shadow: "shadow-skill-yellow",
   },
   {
     title: "Deploy",
     description:
-      "You have an idea and you want it to be designed before the development starts. Great idea, I’ll be happy to help you through this step.",
+      "Smoothly transition from development to deployment. I manage the technical intricacies, ensuring your project is seamlessly launched and ready to make an impact.",
     icon: <Cog className="w-8 h-8 text-lamp" />,
     shadow: "shadow-skill-red",
   },
