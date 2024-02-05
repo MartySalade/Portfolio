@@ -18,29 +18,20 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useSubmitEmail } from "@/hooks/useSubmitEmail";
+import { emailFormSchema } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-const formSchema = z.object({
-  email: z
-    .string()
-    .min(1, { message: "This field has to be filled." })
-    .email("This is not a valid email."),
-  message: z.string().min(80).max(600),
-});
 export function Contact() {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof emailFormSchema>>({
+    resolver: zodResolver(emailFormSchema),
     defaultValues: {
       email: "",
       message: "Hello Martin,",
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log("Here with:", values);
-  }
+  const { isLoading, onEmailSubmit } = useSubmitEmail();
 
   return (
     <section
@@ -75,7 +66,7 @@ export function Contact() {
       </p>
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={form.handleSubmit(onEmailSubmit)} className="space-y-4">
           <FormField
             control={form.control}
             name="email"
@@ -110,7 +101,13 @@ export function Contact() {
               </FormItem>
             )}
           />
-          <Button type="submit" size="sm" className="w-full sm:w-fit">
+
+          <Button
+            disabled={isLoading}
+            type="submit"
+            size="sm"
+            className="w-full sm:w-fit"
+          >
             SEND
             <Send className="w-5 h-5 ml-2" />
           </Button>
