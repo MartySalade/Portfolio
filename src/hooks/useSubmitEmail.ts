@@ -18,11 +18,11 @@ export function useSubmitEmail() {
       loading: "Loading...",
       success: () => {
         setIsLoading(false);
-        return "Email sent successfully!";
+        return "Message sent successfully!";
       },
       error: () => {
         setIsLoading(false);
-        return "Error sending email!";
+        return "Error sending message!";
       },
     });
   }
