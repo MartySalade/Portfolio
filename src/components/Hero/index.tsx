@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from "react";
+
 import {
   AnimatePresence,
   motion,
@@ -5,12 +7,11 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import { ChevronsDown, MessageCircle } from "lucide-react";
+import { ChevronsDown } from "lucide-react";
 import Link from "next/link";
 
 import { LampContainer } from "@/components/ui/lamp";
 import { cn } from "@/lib/utils";
-import { useState, useRef, useEffect } from "react";
 
 export function Hero() {
   const ref = useRef(null);
@@ -19,7 +20,7 @@ export function Hero() {
     offset: ["start start", "end start"],
   });
 
-  const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
+  const springConfig = { stiffness: 100, damping: 10, bounce: 0 };
   const scale = useSpring(
     useTransform(scrollYProgress, [0, 1], [1, 3.5]),
     springConfig
@@ -28,25 +29,9 @@ export function Hero() {
     useTransform(scrollYProgress, [0, 0.8], [0.2, 0]),
     springConfig
   );
-  const rotateZ = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [10, 0]),
-    springConfig
-  );
-  const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 1], [200, 600])
-  );
-  const translateX = useSpring(
-    useTransform(scrollYProgress, [0, 1], [100, 200])
-  );
 
   return (
     <div ref={ref}>
-      <motion.div
-        style={{ translateY, translateX }}
-        className="p-4 bg-black border-lamp rounded border w-fit shadow absolute top-16 left-16"
-      >
-        <MessageCircle />
-      </motion.div>
       <LampContainer>
         <motion.h1
           initial={{ opacity: 0.5, y: 100 }}
