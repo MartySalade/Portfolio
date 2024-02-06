@@ -23,6 +23,7 @@ export const PROJECTS: IProject[] = [
     tags: ["2024", "React", "Typescript", "Blockchain"],
     url: "https://ctzn.city",
     repo: "https://github.com/ElrondCity/dapp",
+    completed: false,
   },
   {
     title: "Lol Classroom",
@@ -38,6 +39,7 @@ export const PROJECTS: IProject[] = [
     images: [lol1, lol2, lol3],
     tags: ["2024", "Next", "Typescript", "Gaming"],
     url: "https://lol-classroom.vercel.app/",
+    completed: false,
   },
   {
     title: "MultisigX",
@@ -52,5 +54,6 @@ export const PROJECTS: IProject[] = [
     images: [multisigx1, multisigx2],
     tags: ["2023", "React", "Typescript", "Blockchain"],
     url: "https://multisigx.com/",
+    completed: true,
   },
 ];

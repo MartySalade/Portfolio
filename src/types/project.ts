@@ -6,5 +6,6 @@ export interface IProject {
   images: StaticImageData[];
   tags: string[];
   url: string;
+  completed: boolean;
   repo?: string;
 }

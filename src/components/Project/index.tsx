@@ -1,6 +1,6 @@
 import Autoplay from "embla-carousel-autoplay";
 import { motion } from "framer-motion";
-import { Code, Eye } from "lucide-react";
+import { CheckCircle, Code, Eye } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -21,7 +21,7 @@ type Props = {
 };
 
 export function Project({ project, reverse, translateY }: Readonly<Props>) {
-  const { title, tags, description, url, repo, images } = project;
+  const { title, tags, description, url, repo, images, completed } = project;
 
   return (
     <div
@@ -57,7 +57,20 @@ export function Project({ project, reverse, translateY }: Readonly<Props>) {
         className="flex flex-col gap-6 w-full lg:w-1/2"
         style={{ opacity: translateY }}
       >
-        <h3>{title}</h3>
+        <div className="flex gap-4 items-center">
+          <h3>{title}</h3>
+          {completed ? (
+            <Badge className="mt-1 border-lamp border bg-transparent text-white py-1">
+              <CheckCircle className="h-4 w-4 mr-1" />
+              COMPLETED
+            </Badge>
+          ) : (
+            <Badge className="mt-1 border-orange-500 border bg-transparent text-white py-1">
+              <Code className="h-4 w-4 mr-1" />
+              IN DEVELOPMENT
+            </Badge>
+          )}
+        </div>
         <ul className="flex gap-2">
           {tags.map((tag) => (
             <Badge key={tag}>{tag}</Badge>
