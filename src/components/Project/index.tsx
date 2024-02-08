@@ -78,12 +78,14 @@ export function Project({ project, reverse, translateY }: Readonly<Props>) {
         </ul>
         {description}
         <div className="flex gap-4">
-          <Button asChild size="sm">
-            <Link href={url} target="_blank">
-              VISIT
-              <Eye className="h-5 w-5 ml-2" />
-            </Link>
-          </Button>
+          {url && (
+            <Button asChild size="sm">
+              <Link href={url} target="_blank">
+                VISIT
+                <Eye className="h-5 w-5 ml-2" />
+              </Link>
+            </Button>
+          )}
           {repo && (
             <Button asChild variant="outline" size="sm">
               <Link href={repo} target="_blank">

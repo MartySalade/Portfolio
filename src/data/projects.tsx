@@ -21,8 +21,8 @@ export const PROJECTS: IProject[] = [
     ),
     images: [ctzn1, ctzn2, ctzn3],
     tags: ["2024", "React", "Typescript", "Blockchain"],
-    url: "https://ctzn.city",
-    repo: "https://github.com/ElrondCity/dapp",
+    // url: "https://ctzn.city",
+    // repo: "https://github.com/ElrondCity/dapp",
     completed: false,
   },
   {
@@ -38,7 +38,7 @@ export const PROJECTS: IProject[] = [
     ),
     images: [lol1, lol2, lol3],
     tags: ["2024", "Next", "Typescript", "Gaming"],
-    url: "https://lol-classroom.vercel.app/",
+    // url: "https://lol-classroom.vercel.app/",
     completed: false,
   },
   {
