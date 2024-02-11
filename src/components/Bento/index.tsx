@@ -7,7 +7,6 @@ import profilePicture from "@/assets/images/martinMalleinPP.jpeg";
 import { BentoBlock, Card } from "@/components";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
 import { Button } from "@/components/ui/button";
-import { PROJECTS } from "@/data";
 
 function getAge(birthday: Date) {
   const ageDifMs = Date.now() - birthday.getTime();
@@ -72,21 +71,15 @@ export function Bento() {
         </Card>
         <Card variants={item} className="row-span-2 row-start-4">
           <BentoBlock
-            title={PROJECTS.length.toString()}
-            description="projects"
+            title={getAge(new Date("1999-11-10")).toString()}
+            description="years old"
           />
         </Card>
         <Card variants={item} className="col-span-2 row-span-2 row-start-4">
           <BentoBlock title="Martin" description="Mallein" />
         </Card>
-        <Card variants={item} className="col-span-2 row-span-2 row-start-6">
+        <Card variants={item} className="col-span-3 row-span-2 row-start-6">
           <BentoBlock title="Toulouse" description="31300 - France" />
-        </Card>
-        <Card variants={item} className="col-span-1 row-span-2 row-start-6">
-          <BentoBlock
-            title={getAge(new Date("1999-11-10")).toString()}
-            description="years old"
-          />
         </Card>
       </motion.div>
       <motion.div
