@@ -5,7 +5,7 @@ export interface IProject {
   description: React.ReactNode;
   images: StaticImageData[];
   tags: string[];
-  url: string;
+  url?: string;
   completed: boolean;
   repo?: string;
 }
