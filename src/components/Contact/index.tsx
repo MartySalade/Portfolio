@@ -44,7 +44,10 @@ export function Contact() {
         </h2>
         <div className="hidden lg:flex gap-4">
           <Button asChild variant="outline" className="group p-2 invert">
-            <Link href={"https://www.linkedin.com/in/martinmallein"}>
+            <Link
+              href={"https://www.linkedin.com/in/martinmallein"}
+              target="_blank"
+            >
               <Image
                 className="group-hover:invert"
                 src={linkedinIcon}
@@ -55,7 +58,7 @@ export function Contact() {
             </Link>
           </Button>
           <Button asChild variant="outline" className="p-2 invert">
-            <Link href={"https://github.com/MartySalade"}>
+            <Link href={"https://github.com/MartySalade"} target="_blank">
               <Github />
             </Link>
           </Button>
