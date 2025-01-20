@@ -31,7 +31,7 @@ export function Project({ project, reverse, translateY }: Readonly<Props>) {
       })}
     >
       <Carousel
-        className="w-full lg:w-1/2 rounded"
+        className="rounded w-full lg:w-1/2"
         plugins={[
           Autoplay({
             delay: 2000,
@@ -57,16 +57,16 @@ export function Project({ project, reverse, translateY }: Readonly<Props>) {
         className="flex flex-col gap-6 w-full lg:w-1/2"
         style={{ opacity: translateY }}
       >
-        <div className="flex gap-4 items-center">
+        <div className="flex items-center gap-4">
           <h3>{title}</h3>
           {completed ? (
-            <Badge className="mt-1 border-lamp border bg-transparent text-white py-1">
-              <CheckCircle className="h-4 w-4 mr-1" />
+            <Badge className="bg-transparent mt-1 py-1 border border-lamp text-white">
+              <CheckCircle className="mr-1 w-4 h-4" />
               COMPLETED
             </Badge>
           ) : (
-            <Badge className="mt-1 border-orange-500 border bg-transparent text-white py-1">
-              <Code className="h-4 w-4 mr-1" />
+            <Badge className="border-orange-500 bg-transparent mt-1 py-1 border text-white">
+              <Code className="mr-1 w-4 h-4" />
               IN DEVELOPMENT
             </Badge>
           )}
@@ -82,7 +82,7 @@ export function Project({ project, reverse, translateY }: Readonly<Props>) {
             <Button asChild size="sm">
               <Link href={url} target="_blank">
                 VISIT
-                <Eye className="h-5 w-5 ml-2" />
+                <Eye className="ml-2 w-5 h-5" />
               </Link>
             </Button>
           )}
@@ -90,7 +90,7 @@ export function Project({ project, reverse, translateY }: Readonly<Props>) {
             <Button asChild variant="outline" size="sm">
               <Link href={repo} target="_blank">
                 CODE
-                <Code className="h-5 w-5 ml-2" />
+                <Code className="ml-2 w-5 h-5" />
               </Link>
             </Button>
           )}

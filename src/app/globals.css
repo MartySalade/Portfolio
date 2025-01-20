@@ -71,25 +71,25 @@
     @apply border-border scroll-smooth;
   }
   body {
-    @apply bg-background text-foreground min-h-screen w-screen overflow-x-hidden scroll-smooth;
+    @apply bg-background w-screen min-h-screen text-foreground overflow-x-hidden scroll-smooth;
   }
   h1 {
-    @apply text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold;
+    @apply font-bold text-4xl sm:text-6xl lg:text-7xl xl:text-8xl;
   }
   h2 {
-    @apply text-4xl lg:text-5xl xl:text-6xl font-semibold;
+    @apply font-semibold text-4xl lg:text-5xl xl:text-6xl;
   }
   h3 {
-    @apply text-2xl lg:text-3xl xl:text-4xl font-medium;
+    @apply font-medium text-2xl lg:text-3xl xl:text-4xl;
   }
   h4 {
-    @apply text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-medium;
+    @apply font-medium text-xl sm:text-2xl lg:text-3xl xl:text-4xl;
   }
   p {
     @apply text-gray-500;
   }
   h1,
   h2 {
-    @apply bg-gradient-to-br from-slate-300 to-slate-500 bg-clip-text tracking-tight text-transparent py-1;
+    @apply bg-clip-text bg-gradient-to-br from-slate-300 to-slate-500 py-1 text-transparent tracking-tight;
   }
 }
