@@ -18,6 +18,11 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        display: ["var(--font-display)", "ui-sans-serif", "system-ui"],
+        sans: ["var(--font-sans)", "ui-sans-serif", "system-ui"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -59,6 +64,12 @@ const config = {
           yellow: "#F2BD32",
         },
         lamp: "#00ccb1",
+        // Warm, editorial palette
+        ink: "#0b0b0d",
+        panel: "#111114",
+        cream: "#f4f3ee",
+        mute: "#8a8a94",
+        sand: "#e8c48a",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -74,10 +85,34 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "aurora-1": {
+          "0%, 100%": { transform: "translate(-10%, -10%) scale(1)" },
+          "50%": { transform: "translate(10%, 8%) scale(1.25)" },
+        },
+        "aurora-2": {
+          "0%, 100%": { transform: "translate(8%, 6%) scale(1.1)" },
+          "50%": { transform: "translate(-8%, -8%) scale(0.9)" },
+        },
+        "grain-shift": {
+          "0%, 100%": { transform: "translate(0, 0)" },
+          "10%": { transform: "translate(-5%, -10%)" },
+          "30%": { transform: "translate(3%, -15%)" },
+          "50%": { transform: "translate(12%, 9%)" },
+          "70%": { transform: "translate(-9%, 4%)" },
+          "90%": { transform: "translate(-1%, 7%)" },
+        },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "aurora-1": "aurora-1 18s ease-in-out infinite",
+        "aurora-2": "aurora-2 24s ease-in-out infinite",
+        "grain-shift": "grain-shift 8s steps(6) infinite",
+        marquee: "marquee 40s linear infinite",
       },
       backgroundImage: {
         "card-gradient":
@@ -90,6 +125,7 @@ const config = {
         "skill-blue": "0px 0px 9px 1px #6D62EA",
         "skill-yellow": "0px 0px 9px 1px #F2BD32",
         "skill-red": "0px 0px 9px 1px #EA495C",
+        glow: "0 0 60px -12px rgba(0,204,177,0.5)",
       },
     },
   },

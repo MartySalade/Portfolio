@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import linkedinIcon from "@/assets/icons/linkedin.webp";
+import { SectionHeading } from "@/components/SectionHeading";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -36,35 +37,38 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="mt-24 sm:mt-32 flex flex-col gap-4 px-4 md:px-8 xl:px-0"
+      className="relative mx-auto mt-32 flex w-full max-w-7xl flex-col gap-4 px-4 sm:mt-48 md:px-8"
     >
-      <div className="w-full flex justify-between items-center ">
-        <h2 className="w-full lg:w-fit text-center lg:text-left">
-          Let's chat.
-        </h2>
-        <div className="hidden lg:flex gap-4">
-          <Button asChild variant="outline" className="group p-2 invert">
+      <div className="flex w-full items-center justify-between">
+        <SectionHeading index="04" label="Contact" />
+        <div className="hidden gap-3 lg:flex">
+          <Button asChild variant="outline" className="group p-3">
             <Link
               href={"https://www.linkedin.com/in/martinmallein"}
               target="_blank"
+              aria-label="LinkedIn"
             >
               <Image
-                className="group-hover:invert"
+                className="opacity-80 transition-opacity group-hover:opacity-100"
                 src={linkedinIcon}
-                alt="LinkedIn"
-                width={24}
-                height={24}
+                alt=""
+                width={20}
+                height={20}
               />
             </Link>
           </Button>
-          <Button asChild variant="outline" className="p-2 invert">
-            <Link href={"https://github.com/MartySalade"} target="_blank">
-              <Github />
+          <Button asChild variant="outline" className="p-3">
+            <Link
+              href={"https://github.com/MartySalade"}
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <Github className="h-5 w-5" />
             </Link>
           </Button>
         </div>
       </div>
-      <p className="mb-4 text-center lg:text-left">
+      <p className="mb-4 mt-6 max-w-md">
         Contact me for projects, inquiries, or a good tech conversation.
       </p>
 

@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ffffff;
+    --background: #0b0b0d;
+    --foreground: #f4f3ee;
 
     --card: 0 0% 100%;
     --card-foreground: #ffffff;
@@ -36,8 +36,8 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: #0b0b0d;
+    --foreground: #f4f3ee;
 
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
@@ -71,25 +71,68 @@
     @apply border-border scroll-smooth;
   }
   body {
-    @apply bg-background w-screen min-h-screen text-foreground overflow-x-hidden scroll-smooth;
+    @apply bg-background w-screen min-h-screen text-foreground overflow-x-hidden scroll-smooth antialiased;
   }
   h1 {
-    @apply font-bold text-4xl sm:text-6xl lg:text-7xl xl:text-8xl;
+    @apply font-display font-bold text-4xl sm:text-6xl lg:text-7xl xl:text-8xl;
   }
   h2 {
-    @apply font-semibold text-4xl lg:text-5xl xl:text-6xl;
+    @apply font-display font-semibold text-4xl lg:text-5xl xl:text-6xl;
   }
   h3 {
-    @apply font-medium text-2xl lg:text-3xl xl:text-4xl;
+    @apply font-display font-medium text-2xl lg:text-3xl xl:text-4xl;
   }
   h4 {
-    @apply font-medium text-xl sm:text-2xl lg:text-3xl xl:text-4xl;
-  }
-  p {
-    @apply text-gray-500;
+    @apply font-display font-medium text-xl sm:text-2xl lg:text-3xl xl:text-4xl;
   }
   h1,
-  h2 {
-    @apply bg-clip-text bg-gradient-to-br from-slate-300 to-slate-500 py-1 text-transparent tracking-tight;
+  h2,
+  h3,
+  h4 {
+    @apply text-cream tracking-tight;
+    text-wrap: balance;
+  }
+  p {
+    @apply text-mute;
+  }
+}
+
+@layer components {
+  /* Small monospace label — used for eyebrows, tags, section indices */
+  .label-mono {
+    @apply font-mono text-xs uppercase tracking-[0.2em] text-mute;
+  }
+  /* Teal → sand gradient clip-text for accent words in headlines */
+  .accent-text {
+    @apply bg-gradient-to-br from-lamp to-sand bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  /* Break out of a centered container to the viewport edges */
+  .full-bleed {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Custom cursor: hide the native one on fine-pointer (desktop) devices only */
+@media (hover: hover) and (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none !important;
+  }
+}
+
+/* Respect reduced-motion: kill decorative animation + scroll smoothing */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }

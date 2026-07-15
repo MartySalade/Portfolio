@@ -10,10 +10,11 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-foreground text-background hover:bg-gray-200",
+        default:
+          "bg-cream text-ink hover:bg-white hover:shadow-glow font-mono uppercase tracking-wider text-xs",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        icon: "p-[15px] bg-background rounded-md",
+          "border border-white/15 bg-transparent text-cream hover:border-lamp hover:text-lamp font-mono uppercase tracking-wider text-xs",
+        icon: "p-[15px] bg-panel border border-white/10 rounded-md hover:border-lamp/50",
       },
       size: {
         default: "px-6 py-4 text-lg",
