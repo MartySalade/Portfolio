@@ -1,17 +1,35 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Bricolage_Grotesque, Inter, JetBrains_Mono } from "next/font/google";
 
+import { Cursor } from "@/components/Cursor";
 import { Footer } from "@/components/Footer";
+import { Grain } from "@/components/Grain";
+import { Nav } from "@/components/Nav";
 import { Toaster } from "@/components/ui/sonner";
 import { Analytics } from "@vercel/analytics/react";
 
-const inter = Inter({ subsets: ["latin"] });
+const display = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
+const sans = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Martin Mallein - Portfolio",
-  description: "Welcome to my website",
+  title: "Martin Mallein — Frontend & Software Engineer",
+  description:
+    "Portfolio of Martin Mallein — frontend & software engineer based in Toulouse, France. I turn digital challenges into polished products.",
 };
 
 export default function RootLayout({
@@ -20,9 +38,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        {/* <div className="z-10 absolute opacity-15 h-full w-full bg-gradient-to-r bg-opacity-10 from-black via-blue-500 to-black" /> */}
+    <html
+      lang="en"
+      className={`dark ${display.variable} ${sans.variable} ${mono.variable}`}
+    >
+      <body className="font-sans">
+        <Grain />
+        <Cursor />
+        <Nav />
         <main className="relative min-h-screen">
           {children}
           <Analytics />

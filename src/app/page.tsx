@@ -8,7 +8,7 @@ import { Skills } from "@/components/Skills";
 
 export default function Home() {
   return (
-    <div className="max-w-7xl w-full flex flex-col mx-auto">
+    <div className="flex w-full flex-col">
       <Hero />
       <Bento />
       <Projects />

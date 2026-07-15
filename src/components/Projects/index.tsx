@@ -1,19 +1,24 @@
 import { Project } from "@/components/Project";
-import { ProjectParallax } from "@/components/ProjectParallax";
+import { SectionHeading } from "@/components/SectionHeading";
 import { PROJECTS } from "@/data";
 
 export function Projects() {
   return (
-    <section className="px-4 md:px-8 xl:px-0 flex flex-col gap-8">
-      <ProjectParallax />
-      <h2 className="text-center lg:text-left mb-4 sm:mb-8">Projects.</h2>
-      <ul className="flex flex-col">
+    <section
+      id="work"
+      className="relative mx-auto mt-32 w-full max-w-7xl px-4 sm:mt-48 md:px-8"
+    >
+      <SectionHeading index="01" label="Projects" />
+
+      {/* Project list — generous rhythm, alternating sides. */}
+      <ul className="mt-12 flex flex-col gap-28 sm:gap-40 sm:mt-16">
         {PROJECTS.map((project, index) => (
           <li key={project.title}>
-            <Project project={project} reverse={index % 2 === 1} />
-            {index < PROJECTS.length - 1 && (
-              <hr className="my-16 lg:my-24 opacity-20 w-1/2 sm:w-48 mx-auto" />
-            )}
+            <Project
+              project={project}
+              index={index}
+              reverse={index % 2 === 1}
+            />
           </li>
         ))}
       </ul>
